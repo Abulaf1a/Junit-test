@@ -16,24 +16,29 @@
 
 
     <dependencies>
-
+<!--        <dependency>-->
+<!--            <groupId>org.junit.jupiter</groupId>-->
+<!--            <artifactId>junit-jupiter</artifactId>-->
+<!--            <version>5.8.1</version> &lt;!&ndash; Check for the latest version &ndash;&gt;-->
+<!--            <scope>test</scope>-->
+<!--        </dependency>-->
         <!-- JUnit Platform Commons (optional but useful) -->
+<!--        <dependency>-->
+<!--            <groupId>org.junit.platform</groupId>-->
+<!--            <artifactId>junit-platform-commons</artifactId>-->
+<!--            <version>1.9.3</version> &lt;!&ndash; Check for the latest version &ndash;&gt;-->
+<!--        </dependency>-->
         <dependency>
-            <groupId>org.junit.platform</groupId>
-            <artifactId>junit-platform-commons</artifactId>
-            <version>1.9.3</version> <!-- Check for the latest version -->
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>5.11.0-M1</version>
         </dependency>
-
 <!--        <dependency>-->
 <!--            <groupId>org.junit.jupiter</groupId>-->
 <!--            <artifactId>junit-jupiter-engine</artifactId>-->
 <!--            <version>5.10.0</version>-->
 <!--        </dependency>-->
-            <dependency>
-                <groupId>org.junit.jupiter</groupId>
-                <artifactId>junit-jupiter</artifactId>
-                <version>5.11.0-M1</version>
-            </dependency>
+
 
 <!--        <dependency>-->
 <!--            <groupId>org.junit.jupiter</groupId>-->
@@ -41,6 +46,7 @@
 <!--            <version>5.11.0</version>-->
 <!--            <scope>test</scope>-->
 <!--        </dependency>-->
+
     </dependencies>
 
 </project>
