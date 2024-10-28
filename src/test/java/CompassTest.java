@@ -8,8 +8,8 @@ import static org.junit.jupiter.api.Assertions.*;
 class CompassTest {
 
     @Test
-    @DisplayName("Tests the rotate method")
-    void rotate() {
+    @DisplayName("returns compass point,East, when there is a change in direction from north turning towards right")
+    void testCompassCanPointToEastWhenTurnedRight() {
 
         //Arrange
         Point north = Point.NORTH;
@@ -26,8 +26,8 @@ class CompassTest {
 
 
     @Test
-    @DisplayName("All points and rotation directions function correctly with all right inputs")
-    void compassCanRotateRight(){
+    @DisplayName("returns compass points on rotation to left,Right")
+    void testCompassCanRotateRightAndLeft(){
 
         //Arrange
         ArrayList<Point> points = new ArrayList<>();
@@ -39,21 +39,17 @@ class CompassTest {
         Compass compass = new Compass();
 
         //Act
-
         //Assert
         assertAll(
                 "Grouped Assertions of points",
-                () -> assertEquals(Point.EAST, compass.rotate(points.get(0), Direction.RIGHT)),
+                () -> assertEquals(Point.EAST, compass.rotate(points.getFirst(), Direction.RIGHT)),
                 () -> assertEquals(Point.WEST, compass.rotate(points.get(1), Direction.RIGHT)),
                 () -> assertEquals(Point.SOUTH, compass.rotate(points.get(2), Direction.RIGHT)),
                 () -> assertEquals(Point.NORTH, compass.rotate(points.get(3), Direction.RIGHT)),
-
-                () -> assertEquals(Point.WEST, compass.rotate(points.get(0), Direction.LEFT)),
+                () -> assertEquals(Point.WEST, compass.rotate(points.getFirst(), Direction.LEFT)),
                 () -> assertEquals(Point.EAST, compass.rotate(points.get(1), Direction.LEFT)),
                 () -> assertEquals(Point.NORTH, compass.rotate(points.get(2), Direction.LEFT)),
                 () -> assertEquals(Point.SOUTH, compass.rotate(points.get(3), Direction.LEFT))
-
-
         );
 
     }
