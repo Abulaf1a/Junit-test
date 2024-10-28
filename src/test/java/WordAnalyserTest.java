@@ -18,13 +18,13 @@ class WordAnalyserTest {
     @Test
     @DisplayName("returns longest word/words when passed in a sentence as input")
     void testFindLongestWords_returnsLongestWord() {
-        String input = "This is some example test texmpyuyule data - come up with your own!";
+        String input = "This is a fairly boring sentence.";
         String[] longestWords = analyser.findLongestWords(input);
 
         assertEquals("texmpyuyule",longestWords[0]);
 
 
-        String input2 = "Package this code as library";
+        String input2 = "This is a fairly boring thing.";
         String[] longestWords1 = analyser.findLongestWords(input2);
 
         assertEquals("Package",longestWords1[0]);
@@ -50,9 +50,9 @@ class WordAnalyserTest {
     @Test
     @DisplayName("returns Map of frequency of each letter when passed in a sentence as input")
     void testCalculateLetterFrequency_returnsFrequencyOfLettersInText() {
-        String inputText = "Hello world!";
+        String inputText = "Hello world";
         Map<Character, Integer> characterIntegerMap = analyser.calculateLetterFrequency(inputText);
-        assertEquals(3, characterIntegerMap.get('l'));
-        assertNull( characterIntegerMap.get('q'));
+        assertEquals(3, characterIntegerMap.getOrDefault('l',0));
+        assertEquals(0, characterIntegerMap.getOrDefault('z',0));
     }
 }

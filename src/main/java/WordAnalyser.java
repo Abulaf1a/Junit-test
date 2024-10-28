@@ -38,12 +38,8 @@ public class WordAnalyser {
             // TODO: Implement the logic to calculate the frequency of each letter in the given text
             Map<Character,Integer> letterFrequencyMap= new HashMap<>();
             for(int i=0; i< text.length();i++){
-                if(letterFrequencyMap.containsKey(text.charAt(i))){
-                    letterFrequencyMap.replace(text.charAt(i),letterFrequencyMap.get(text.charAt(i))+1);
-                }
-                else {
-                    letterFrequencyMap.put(text.charAt(i), 1);
-                }
+                letterFrequencyMap.put(text.charAt(i), letterFrequencyMap.getOrDefault(text.charAt(i), 0) + 1);
+
             }
             return letterFrequencyMap;
         }
